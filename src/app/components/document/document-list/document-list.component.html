@@ -1,0 +1,27 @@
+<div class="card">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Employee</th>
+                <th>Document Type</th>
+                <th class="has-text-centered">Document</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let d of documents">
+                <td>{{d.id}}</td>
+                <td>{{d.employee.name}} {{d.employee.surname}}</td>
+                <td>{{d.documentType.name}}</td>
+                <td class="has-text-centered">
+                    <a class="button is-success" (click)="download(d.file)">
+                        <span class="icon is-small">
+                            <i class="fa fa-download"></i>
+                        </span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

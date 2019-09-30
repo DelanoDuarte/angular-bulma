@@ -1,0 +1,22 @@
+<div class="card">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Document Type</th>
+                <th class="has-text-centered">Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let dt of documentTypes">
+                <td>{{dt.id}}</td>
+                <td>{{dt.name}}</td>
+                <td class="has-text-centered">
+                    <span *ngIf="dt.active" class="tag is-success"><b>ACTIVE</b></span>
+                    <span *ngIf="!dt.active" class="tag is-danger"><b>NOT ACTIVE</b></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

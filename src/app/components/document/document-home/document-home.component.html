@@ -1,0 +1,32 @@
+<div class="animated fadeIn">
+    <div>
+        <h1 class="title">Document</h1>
+        <h2 class="subtitle">Document List</h2>
+    </div>
+
+    <hr />
+
+    <div class="columns is-multiline">
+        <div class="column">
+            <div class="box notification is-primary">
+                <div class="heading">Documents</div>
+                <div class="title">{{numberOfDocuments}}</div>
+            </div>
+        </div>
+        <div class="column">
+        </div>
+        <div class="column">
+        </div>
+    </div>
+
+    <div class="columns is-multiline">
+        <div class="column">
+            <app-document-list (numberOfDocuments)="getNumberOfDocuments($event)"></app-document-list>
+        </div>
+    </div>
+
+    <a class="button is-info is-4 is-offset-8" [routerLink]="['/document/new']"
+        routerLinkActive="router-link-active">New
+        Document Submition</a>
+
+</div>

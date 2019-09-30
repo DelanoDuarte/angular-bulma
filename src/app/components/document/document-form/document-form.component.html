@@ -1,0 +1,63 @@
+<div class="card">
+    <div class="card-content">
+        <form [formGroup]="documentFg" (ngSubmit)="submit()">
+
+            <div class="columns">
+                <div class="column is-6">
+                    <label> <b> Employee </b></label>
+                    <br />
+                    <div class="select">
+                        <select formControlName="employee">
+                            <option [ngValue]="null">Select Employee</option>
+                            <option *ngFor="let emp of employees" [ngValue]="emp">{{emp.name}} {{emp.surname}} -
+                                {{emp.employeeId}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column is-6">
+                    <label> <b> Document Type </b></label>
+                    <br />
+                    <div class="select">
+                        <select formControlName="documentType">
+                            <option [ngValue]="null">Select Document Type</option>
+                            <option *ngFor="let dt of documentTypes" [ngValue]="dt">{{dt.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column is-12">
+                    <label> <b> Document File </b></label>
+                    <br />
+                    <div class="file has-name">
+                        <label class="file-label">
+                            <input class="file-input" type="file" name="file" formControlName="file"
+                                (change)="onAttachDocument($event)">
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fa fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    Choose a file…
+                                </span>
+                            </span>
+                            <span class="file-name">
+                                {{documentFileName}}
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <button class="button is-success" [disabled]="!documentFg.valid" type="submit">
+                Submit
+            </button>
+
+        </form>
+    </div>
+</div>

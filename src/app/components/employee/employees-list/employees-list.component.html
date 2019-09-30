@@ -1,0 +1,21 @@
+<div class="card">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>EmployeeId</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.surname}}</td>
+                <td>{{emp.employeeId}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,33 @@
+<div class="animated fadeIn">
+    <div>
+        <h1 class="title">Document Type</h1>
+        <h2 class="subtitle">Document Type List</h2>
+    </div>
+
+    <hr />
+
+
+    <div class="columns is-multiline">
+        <div class="column">
+            <div class="box notification is-primary">
+                <div class="heading">Document Types</div>
+                <div class="title">{{numberOfDocumentTypes}}</div>
+            </div>
+        </div>
+        <div class="column">
+        </div>
+        <div class="column">
+        </div>
+    </div>
+
+    <div class="columns is-multiline">
+        <div class="column">
+            <app-document-type-list (numberOfDocumentTypes)="numberDocumentTypes($event)">
+            </app-document-type-list>
+        </div>
+    </div>
+
+    <a class="button is-info is-4 is-offset-8" [routerLink]="['/document-type/new']"
+        routerLinkActive="router-link-active">New
+        Document Type</a>
+</div>

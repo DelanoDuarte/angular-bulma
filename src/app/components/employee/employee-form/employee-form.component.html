@@ -1,0 +1,25 @@
+<div class="card">
+
+    <div class="card-content">
+        <form [formGroup]="employeeForm" (ngSubmit)="saveAction()">
+
+            <div class="columns">
+                <div class="column is-4">
+                    <label>Name</label>
+                    <input class="input" type="text" placeholder="James" formControlName="name">
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column is-4">
+                    <label>Surname</label>
+                    <input class="input" type="text" placeholder="Albert Sullivan" formControlName="surname">
+                </div>
+            </div>
+
+            <button class="button is-success" [disabled]="!employeeForm.valid" type="submit">
+                Save
+            </button>
+        </form>
+    </div>
+</div>

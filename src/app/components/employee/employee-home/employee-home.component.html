@@ -1,0 +1,31 @@
+<div class="animated fadeIn">
+    <div>
+        <h1 class="title">Employee</h1>
+        <h2 class="subtitle">Employees List</h2>
+    </div>
+
+    <hr />
+
+    <div class="columns is-multiline">
+        <div class="column">
+            <div class="box notification is-primary">
+                <div class="heading">Employees</div>
+                <div class="title">{{numberOfEmployees}}</div>
+            </div>
+        </div>
+        <div class="column">
+        </div>
+        <div class="column">
+        </div>
+    </div>
+
+    <div class="columns is-multiline">
+        <div class="column">
+            <app-employees-list (numberOfEmployees)="getNumberOfEmployes($event)"></app-employees-list>
+        </div>
+    </div>
+
+    <a class="button is-info is-4 is-offset-8" [routerLink]="['/employee/new']"
+        routerLinkActive="router-link-active">New
+        Employee</a>
+</div>

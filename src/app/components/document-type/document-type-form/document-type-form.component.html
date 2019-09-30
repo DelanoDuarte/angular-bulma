@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-content">
+        <form [formGroup]="documentTypeForm" (ngSubmit)="saveAction()">
+
+            <div class="columns">
+                <div class="column is-4">
+                    <label>Name</label>
+                    <input class="input" type="text" placeholder="Resume" formControlName="name">
+                </div>
+            </div>
+
+            <button class="button is-success" type="submit">
+                Save
+            </button>
+        </form>
+    </div>
+</div>

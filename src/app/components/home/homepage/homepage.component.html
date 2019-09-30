@@ -1,0 +1,40 @@
+<div class="columns is-multiline">
+    <div class="column">
+        <div class="box notification is-warning animated bounceInRight">
+            <div class="heading">Employees</div>
+            <div class="title">{{numberOfEmployees}}</div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="box notification is-success animated bounceInRight">
+            <div class="heading">Documents Submited</div>
+            <div class="title">{{numberOfDocuments}}</div>
+        </div>
+    </div>
+    <div class="column"></div>
+    <div class="column"></div>
+</div>
+
+
+<div class="card animated fadeIn">
+    <header class="card-header">
+        <p class="card-header-title">
+            Last Employees Submited Documents
+        </p>
+    </header>
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Document Type</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let doc of last3DocumentsSubmited">
+                <td>{{doc.employee.name}} {{doc.employee.surname}}</td>
+                <td>{{doc.documentType.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

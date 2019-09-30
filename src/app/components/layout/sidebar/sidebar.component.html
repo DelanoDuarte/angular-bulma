@@ -1,0 +1,40 @@
+<section class="main-content columns is-fullheight">
+    <aside class="column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile">
+        <ul class="menu-list">
+            <li>
+                <a routerLink="{{home.path}}" [routerLinkActive]="'is-active'" [routerLinkActiveOptions]="{exact:
+                home.active}">
+                    <span class="icon"><i class="{{home.icon}}"></i></span> {{home.text}}
+                </a>
+            </li>
+        </ul>
+
+        <p class="menu-label is-hidden-touch">Administration</p>
+        <ul class="menu-list">
+            <li *ngFor="let a of administration">
+                <a routerLink="{{a.path}}" [routerLinkActive]="'is-active'" [routerLinkActiveOptions]="{exact:
+                    a.active}">
+                    <span class="icon"><i class="{{a.icon}}"></i></span> {{a.text}}
+                </a>
+            </li>
+        </ul>
+
+        <p class="menu-label is-hidden-touch">Modules</p>
+        <ul class="menu-list">
+            <li *ngFor="let m of modules">
+                <a routerLink="{{m.path}}" [routerLinkActive]="'is-active'" [routerLinkActiveOptions]="{exact:
+                    m.active}">
+                    <span class="icon"><i class="{{m.icon}}"></i></span> {{m.text}}
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+
+    <div class="container column is-10">
+        <div class="section">
+            <app-message></app-message>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</section>
